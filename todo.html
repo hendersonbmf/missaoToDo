@@ -1,28 +1,39 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Todo App</title>
-    <link charset="utf-8">    
-  </head>
-  <body>
-    <div>
-        <h1>Missão TODO</h1>
-      <p>
-        <input type="text"><button>Adicionar</button>
-      </p>
-      
-      <h2>Missões Pendentes</h2>
-      <ul>
-        
-        <li><input type="checkbox"><label>Missão 'ToDo' CSS</label><button class="delete">Deletar</button></li>
-        <li><input type="checkbox"><label>Missão 'ToDo' Javascript</label><button class="delete">Deletar</button></li>
-        
-      </ul>
-      
-      <h3>Missões Completas</h3>
-      <ul id="completed-tasks">
-        <li><input type="checkbox"><label>Missão 'ToDo' HTML</label><button class="delete">Deletar</button></li>
-      </ul>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <title>Missao To Do</title>
+</head>
+<body>
 
-  </body>
+  <div id="myDIV" class="header">
+    <h2>Lista de Missões</h2>
+    <input type="text" id="nomedaMissao" placeholder="Insira o nome da missão">
+    <span onclick="novaMissao()" class="addBtn" style="border: solid 1px;">Add</span>
+  </div>
+  
+  <ul id="lista">
+  
+  </ul>
+
+</body>
+
+    <script type="">
+        
+        function novaMissao() {
+  var li = document.createElement("li");
+  var valordaEntrada = document.getElementById("nomedaMissao").value;
+  var texto = document.createTextNode(valordaEntrada);
+  li.appendChild(texto);
+  
+    if (valordaEntrada === '') {
+    alert("Você não inseriu o nome da Missão");
+  } else {
+    document.getElementById("lista").appendChild(li);
+  }
+  document.getElementById("nomedaMissao").value = "";
+
+    }
+    </script>
+
 </html>
